@@ -1,0 +1,182 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie - Supper delicious Burger in town!</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="dashboardstyle.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+  <link rel="preload" as="image" href="./images/bur1.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./images/hero-banner-bg.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./images/hero-bg1.jpg">
+
+</head>
+
+<body id="top">
+
+
+ <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">Burger Company<span class="span">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="nav-item">
+            <a href="/dashboard" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="nav-item">
+           <a href="/createorders" class="navbar-link" data-nav-link>Create Order</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/menu" class="navbar-link" data-nav-link>Shop</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/makereservation" class="navbar-link" data-nav-link>Make a Reservation</a>
+          </li>
+
+
+
+
+           <li class="nav-item">
+          <div class="dropdown">
+          <button class="navbar-link" data-nav-link>Orders</button>
+        <div class="dropdown-content">
+          
+            <a href="/placedorder" class="navbar-link" data-nav-link>Placed  Order</a>
+            <a href="/pickeduporders" class="navbar-link" data-nav-link>Picked Up Orders</a>
+            <a href="/completedorders" class="navbar-link" data-nav-link>Completed Orders</a>
+            
+        </div>
+    </div>
+    </li>
+
+     {{#if loggedIn}}
+      <li class="nav-item">
+        <a class="navbar-link" href="/logout">Logout</a>
+      </li>
+    
+    {{else}}
+    <li class="nav-item">
+      <a class="navbar-link" href="/login">Sign up</a>
+    </li>
+    <li class="nav-item">
+      <a class="navbar-link" href="/register">Register</a>
+    </li>
+    
+    {{/if}}
+
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        
+ <li class="nav-item">
+          <div class="dropdown">
+          <button class="btn btn-hover">My Reservations</button>
+        <div class="dropdown-content">
+          
+            <a href="/myreservation" class="navbar-link" data-nav-link>Pending</a>
+            <a href="/confirmedreservation" class="navbar-link" data-nav-link>Confirmed</a>
+            
+            
+        </div>
+    </div>
+    </li>
+
+
+
+
+
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+<section class="hero" id="home" style="background-image: url('./images/hero-bg1.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h2>CREATE ORDER</h2>
+            </div>
+            <div class="card-body">
+                <form action="/createorders" method="POST">
+                    <div class="form-group">
+                        <label for="chicken">Chicken Clucinator</label>
+                        <input type="number" class="form-control" id="chicken" name='chicken' value="0" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="mutton">Mutton Burger</label>
+                        <input type="number" class="form-control" id="mutton" name='mutton' value="0" min="0">
+                    </div>
+                     <div class="form-group">
+                        <label for="lamb">Lamb Burger</label>
+                        <input type="number" class="form-control" id="lamb" name='lamb' value="0" min="0">
+                    </div>
+                     <div class="form-group">
+                        <label for="veg">Aloo Tikki</label>
+                        <input type="number" class="form-control" id="veg" name='veg' value="0" min="0">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Create Order</button>
+                </form>
+
+                
+            </div>
+        </div>
+        {{#if message }}
+            <h4 class="alert alert-danger mt-4">{{message}}</h4>
+        {{/if}}
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+</body>
+</html>  
+
+            
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger Company - Indulge in pure burger perfection</title>
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <link rel="stylesheet" href="dashboardstyle.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+
+  <link rel="preload" as="image" href="./images/bur1.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./images/hero-banner-bg.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./images/hero-bg1.jpg">
+
+
+  
+
+</head>
+
+<body>
+
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">Burger Company<span class="span">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="nav-item">
+            <a href="/dashboard" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="nav-item">
+           <a href="/createorders" class="navbar-link" data-nav-link>Create Order</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/menu" class="navbar-link" data-nav-link>Shop</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/makereservation" class="navbar-link" data-nav-link>Make a Reservation</a>
+          </li>
+
+           <li class="nav-item">
+          <div class="dropdown">
+          <button class="navbar-link" data-nav-link>Orders</button>
+        <div class="dropdown-content">
+          
+            <a href="/placedorder" class="navbar-link" data-nav-link>Placed  Order</a>
+            <a href="/pickeduporders" class="navbar-link" data-nav-link>Picked Up Orders</a>
+            <a href="/completedorders" class="navbar-link" data-nav-link>Completed Orders</a>
+            
+        </div>
+    </div>
+    </li>
+
+     {{#if loggedIn}}
+      <li class="nav-item">
+        <a class="navbar-link" href="/logout">Logout</a>
+      </li>
+    
+    {{else}}
+    <li class="nav-item">
+      <a class="navbar-link" href="/login">Sign up</a>
+    </li>
+    <li class="nav-item">
+      <a class="navbar-link" href="/register">Register</a>
+    </li>
+    
+    {{/if}}
+
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        
+ <li class="nav-item">
+          <div class="dropdown">
+          <button class="btn btn-hover">My Reservations</button>
+        <div class="dropdown-content">
+          
+            <a href="/myreservation" class="navbar-link" data-nav-link>Pending</a>
+            <a href="/confirmedreservation" class="navbar-link" data-nav-link>Confirmed</a>
+            
+            
+        </div>
+    </div>
+    </li>
+
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+ 
+   <section class="hero" id="home" style="background-image: url('./images/hero-bg1.jpg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+             <section class="section food-menu" id="food-menu">
+        <div class="container">
+
+          <p class="section-subtitle">Popular Dishes</p>
+
+          <h2 class="h2 section-title">
+            Our Delicious <span class="span">Burgers</span>
+          </h2>
+
+          
+
+          <ul class="food-menu-list">
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="./images/chknburger.png" width="300" height="300" loading="lazy"
+                    alt="Chicken Burger" class="w-100">
+
+                  <div class="badge">-15%</div>
+
+                 
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Chicken</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">Chicken Whopper</h3>
+
+                <div class="price-wrapper">
+
+                  <p class="price-text">Price:</p>
+
+                  <data class="price">$49.00</data>
+
+                  <del class="del" value="69.00">$69.00</del>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="./images/muttonburger.png" width="300" height="300" loading="lazy"
+                    alt="Mutton Whopper" class="w-100">
+
+                  <div class="badge">-10%</div>
+
+                  
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Mutton</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">Mutton Cluckinator</h3>
+
+                <div class="price-wrapper">
+
+                  <p class="price-text">Price:</p>
+
+                  <data class="price" value="29.00">₹260.00</data>
+
+                  <del class="del">₹290.00</del>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="./images/veg.png" width="300" height="300" loading="lazy"
+                    alt="White Castle Pizzas" class="w-100">
+
+                  <div class="badge">-25%</div>
+
+                 
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Veg</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">Veggie Delight</h3>
+
+                <div class="price-wrapper">
+
+                  <p class="price-text">Price:</p>
+
+                  <data class="price" value="49.00">₹165.00</data>
+
+                  <del class="del">₹220.00</del>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="food-menu-card">
+
+                <div class="card-banner">
+                  <img src="./images/pork.png" width="300" height="300" loading="lazy"
+                    alt="Bell Burrito Supreme" class="w-100">
+
+                  <div class="badge">-20%</div>
+
+                </div>
+
+                <div class="wrapper">
+                  <p class="category">Pork</p>
+
+                  <div class="rating-wrapper">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+                </div>
+
+                <h3 class="h3 card-title">Pork Burger</h3>
+
+                <div class="price-wrapper">
+
+                  <p class="price-text">Price:</p>
+
+                  <data class="price" value="59.00 ">₹280.00</data>
+
+                  <del class="del">₹350.00</del>
+
+                </div>
+
+              </div>
+            </li>
+
+          
+
+          </ul>
+
+
+        </div>
+      </section>
+
+          </div>
+
+          
+
+        </div>
+      </section>
+      
+     
+      </body>
+
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
