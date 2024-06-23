@@ -27,6 +27,16 @@ router.get("/register", (req, res) => {
     }
 });
 
+router.get("/", (req, res) => {
+    if (res.locals.loggedIn) {
+        res.redirect('/dashboard')
+    }
+    else {
+        res.render('register');
+
+    }
+});
+
 
 
 router.get("/login", (req, res) => {
