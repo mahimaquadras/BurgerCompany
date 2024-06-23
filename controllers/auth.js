@@ -80,9 +80,8 @@ exports.register = (req, res)=>{
             }
             else{
                 console.log(results)
-                return res.render('login', {
-                    message: 'Success'
-                });
+                console.log("hit")
+                res.status(200).redirect("/login")
             }
         });
 
