@@ -7,10 +7,6 @@ const jwt = require('jsonwebtoken');
 const { log } = require('console');
 const expressEjsLayouts = require('express-ejs-layouts');
 
-
-
-
-
 dotenv.config({path: './.env'});
 
 const app = express(); //start the server

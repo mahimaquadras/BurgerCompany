@@ -157,5 +157,18 @@
         y.style.opacity = 1;
     }
 </script>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const errorMessage = urlParams.get('error');
+
+  if (errorMessage) {
+    const errorElement = document.createElement('h4');
+    errorElement.classList.add('alert', 'alert-danger', 'mt-4');
+    errorElement.textContent = decodeURIComponent(errorMessage);
+
+    const formContainer = document.querySelector('#login'); // Adjust selector if needed
+    formContainer.insertBefore(errorElement, formContainer.firstChild); // Insert
+}
+</script>
 </body>
 </html>

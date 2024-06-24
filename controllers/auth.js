@@ -18,16 +18,15 @@ exports.login = async (req,res)=>{
         const {email,password} = req.body;
 
         if(!email || !password ){
-            return res.status(400).render('login', {
-                message: 'Please Provide an email and password'
-            })
+            return res.status(400).redirect('/login?error=Please+provide+an+email+and+password');
         }
     db.query('SELECT * FROM users WHERE email = ?', [email], async (error, results)=>{
         console.log(results);
         if( !results || !(await bcrypt.compare(password, results[0].password ))){
-            res.status(401).render('login', {
-                message: 'Email or Password is incorrect'
-            })
+            // res.status(401).render('login', {
+            //     message: 'Email or Password is incorrect'
+            // })
+            return res.status(400).redirect('/login?error=Email+or+password+is+incorrect');
         }else{
             const role= results[0].role;
 
