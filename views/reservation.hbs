@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{!-- <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -398,16 +398,281 @@
       </div>
 
     </div>
-  </header>
+  </header> --}}
 
+   <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie - Supper delicious Burger in town!</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="dashboardstyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
+  rel="stylesheet">
+  <link rel="preload" as="image" href="./images/bur1.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./images/hero-banner-bg.png" media="min-width(768px)">
+  <link rel="preload" as="image" href="./images/hero-bg1.jpg">
+
+
+
+
+      <style>
+
+
+      
+
+
+        table{
+ position: absolute;
+ z-index: 2;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%,-50%);
+ width: 60%; 
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 15px rgba(64,64,64,.7);
+ border-radius: 12px 12px 0 0;
+ overflow: hidden;
  
 
+}
+
+
+
+      td , th{
+         
+ padding: 15px 20px;
+ text-align: center;
+ 
+
+} 
+
+
+       
+
+        th{
+ background: color #d8f0da; 
+ background: transparent;
+ opacity: 0.97;
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+
+}
+
+  tr{
+ background-color: #d8f0da;
+  background: transparent;
+ opacity: 0.97;
+ 
+ font-family: 'Open Sans',Sans-serif;
+ font-weight: 200;
+ text-transform: uppercase;
+
+
+}
+
+
+
+        .dropdown-container {
+
+            position: relative;
+            display: inline-block;
+        } 
+        
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        .dropdown-content table,
+        .dropdown-content th,
+        .dropdown-content td {
+            border: 1px solid #ddd;
+        }
+
+        .dropdown-content th,
+        .dropdown-content td {
+            padding: 8px;
+            text-align: left;
+        }
+
+ .btn {
+  background-color: var(--bg-color, var(--deep-saffron));
+  color: var(--white);
+  font-family: var(--ff-rubik);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-500);
+  height: var(--height, 45px);
+  padding-inline: var(--padding-inline, 35px);
+  transition: var(--transition-1);
+}
+
+.btn-hover {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  width: 1px;
+  height: 1px;
+  transform: translate(-50%, 51%) scale(var(--scale, 1));
+  border-radius: 50%;
+  background-color: var(--rich-black-fogra-29);
+  z-index: -1;
+  transition: var(--transition-2);
+}
+
+.btn-hover:is(:hover, :focus)::after { --scale: 500; }
+
+
+
+.hero .btn { margin-inline: auto; }
+
+.hero .btn:is(:hover, :focus) {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+
+
+
+
+
+
+    </style>
+
+</head>
+
+<body id="top" style=color: "white";>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <h1>
+        <a href="#" class="logo">Burger Company<span class="span">.</span></a>
+      </h1>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="nav-item">
+            <a href="/dashboard" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="nav-item">
+           <a href="/createorders" class="navbar-link" data-nav-link>Create Order</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/menu" class="navbar-link" data-nav-link>Shop</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/makereservation" class="navbar-link" data-nav-link>Make a Reservation</a>
+          </li>
+
+
+
+
+           <li class="nav-item">
+          <div class="dropdown">
+          <button class="navbar-link" data-nav-link>Orders</button>
+        <div class="dropdown-content">
+          
+            <a href="/placedorder" class="navbar-link" data-nav-link>Placed  Order</a>
+            <a href="/pickeduporders" class="navbar-link" data-nav-link>Picked Up Orders</a>
+            <a href="/completedorders" class="navbar-link" data-nav-link>Completed Orders</a>
+            
+        </div>
+    </div>
+    </li>
+
+     {{#if loggedIn}}
+      <li class="nav-item">
+        <a class="navbar-link" href="/logout">Logout</a>
+      </li>
+    
+    {{else}}
+    <li class="nav-item">
+      <a class="navbar-link" href="/login">Sign up</a>
+    </li>
+    <li class="nav-item">
+      <a class="navbar-link" href="/register">Register</a>
+    </li>
+    
+    {{/if}}
+
+
+        </ul>
+      </nav>
+
+      <div class="header-btn-group">
+        <button class="search-btn" aria-label="Search" data-search-btn>
+          <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+        
+ <li class="nav-item">
+          <div class="dropdown">
+          <button class="btn btn-hover">My Reservations</button>
+        <div class="dropdown-content">
+          
+            <a href="/myreservation" class="navbar-link" data-nav-link>Pending</a>
+            <a href="/confirmedreservation" class="navbar-link" data-nav-link>Confirmed</a>
+            
+            
+        </div>
+    </div>
+    </li>
+
+        <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
+          <span class="line top"></span>
+          <span class="line middle"></span>
+          <span class="line bottom"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+ <main>
+    <article>
+
+ 
+{{!-- 
         {{#if loggedIn}}
         <a class="btn btn-outline-primary my-2 my-md-0 mr-md-3" href="/logout">Logout</a>
         {{else}}
         <a class="btn btn-outline-primary my-2 my-md-0 mr-md-3" href="/login">Sign up</a>
         <a class="btn btn-outline-primary" href="/register">Register</a>
-        {{/if}}
+        {{/if}} --}}
 
     </div>
 
