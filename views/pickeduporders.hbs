@@ -1,28 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
- <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
 
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="dashboardstyle.css">
+
+   <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashboardstyle.css">
-
-  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie - Supper delicious Burger in town!</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="dashboardstyle.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
-    rel="stylesheet">
+  rel="stylesheet">
+  <link rel="preload" as="image" href="./images/bur1.png" media="min-width(768px)">
   <link rel="preload" as="image" href="./images/hero-banner-bg.png" media="min-width(768px)">
   <link rel="preload" as="image" href="./images/hero-bg1.jpg">
 
-    <title>Razor Home</title>
-    <style>
+
+
+
+      <style>
+
+
+      
+
 
         table{
  position: absolute;
@@ -49,6 +53,9 @@
  
 
 } 
+
+
+       
 
         th{
  background: color #d8f0da; 
@@ -107,13 +114,7 @@
             text-align: left;
         }
 
-        
-
-
-
-
-      
-        .btn {
+ .btn {
   background-color: var(--bg-color, var(--deep-saffron));
   color: var(--white);
   font-family: var(--ff-rubik);
@@ -147,14 +148,6 @@
 .btn-hover:is(:hover, :focus)::after { --scale: 500; }
 
 
-.hero {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding-block: 145px 60px;
-  text-align: center;
-}
-
 
 .hero .btn { margin-inline: auto; }
 
@@ -163,28 +156,17 @@
   color: var(--black);
 }
 
-
-
-
     </style>
+
 </head>
-<script>
 
-     function displayPickedUpOrder() {
-        var puorderElement = document.getElementById('puorder');
-        puorderElement.style.display = (puorderElement.style.display === "block") ? "none" : "block";
-    }
-</script>
+<body id="top" style=color: "white";>
 
-<body>
+  <!-- 
+    - #HEADER
+  -->
 
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <a class="my-0 mr-md-auto font-weight-normal" href="/">
-            <h5>Razor-Sec</h5>
-        </a>
-       
-
-       <header class="header" data-header>
+  <header class="header" data-header>
     <div class="container">
 
       <h1>
@@ -254,7 +236,6 @@
  <li class="nav-item">
           <div class="dropdown">
           <button class="btn btn-hover">My Reservations</button>
-        <!-- Dropdown content -->
         <div class="dropdown-content">
           
             <a href="/myreservation" class="navbar-link" data-nav-link>Pending</a>
@@ -265,10 +246,6 @@
     </div>
     </li>
 
-
-
-
-
         <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
           <span class="line top"></span>
           <span class="line middle"></span>
@@ -278,15 +255,8 @@
 
     </div>
   </header>
-
- 
-
-        {{#if loggedIn}}
-        <a class="btn btn-outline-primary my-2 my-md-0 mr-md-3" href="/logout">Logout</a>
-        {{else}}
-        <a class="btn btn-outline-primary my-2 my-md-0 mr-md-3" href="/login">Sign up</a>
-        <a class="btn btn-outline-primary" href="/register">Register</a>
-        {{/if}}
+ <main>
+    <article>
 
     </div>
 

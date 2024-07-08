@@ -61,13 +61,15 @@ exports.register = (req, res)=>{
             console.log(error);
         }
         if(result.length > 0) {
-            return res.render('register', {
-                message: 'That email is already used'
-            })
+            // return res.render('register', {
+            //     message: 'That email is already used'
+            // })
+            return res.status(400).redirect('/register?error=Email+is+already+used');
         }else if(password !== passwordConfirm){
-            return res.render('register', {
-                message: 'That Password is not match'
-            });
+            // return res.render('register', {
+            //     message: 'That Password is not match'
+            // });
+            return res.status(400).redirect('/register?error=The+passwords+do+not+match');
         }
         
         let hashedPassword = await bcrypt.hash(password, 8);

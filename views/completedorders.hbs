@@ -1,26 +1,32 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{!-- <link rel="stylesheet" href="dashboardstyle.css"> --}}
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie - Supper delicious Burger in town!</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="dashboardstyle.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap"
-    rel="stylesheet">
+  rel="stylesheet">
+  <link rel="preload" as="image" href="./images/bur1.png" media="min-width(768px)">
   <link rel="preload" as="image" href="./images/hero-banner-bg.png" media="min-width(768px)">
   <link rel="preload" as="image" href="./images/hero-bg1.jpg">
 
-    <title>Razor Home</title>
-    <style>
- table{
+
+
+
+      <style>
+
+
+      
+
+
+        table{
  position: absolute;
  z-index: 2;
  left: 50%;
@@ -32,19 +38,31 @@
  box-shadow: 0 2px 15px rgba(64,64,64,.7);
  border-radius: 12px 12px 0 0;
  overflow: hidden;
+ 
+
 }
-td , th{
+
+
+
+      td , th{
+         
  padding: 15px 20px;
  text-align: center;
- } 
+ 
 
-th{
+} 
+
+
+       
+
+        th{
  background: color #d8f0da; 
  background: transparent;
  opacity: 0.97;
  font-family: 'Open Sans',Sans-serif;
  font-weight: 200;
  text-transform: uppercase;
+
 }
 
   tr{
@@ -55,6 +73,7 @@ th{
  font-family: 'Open Sans',Sans-serif;
  font-weight: 200;
  text-transform: uppercase;
+
 
 }
 
@@ -94,7 +113,7 @@ th{
             text-align: left;
         }
 
-  .btn {
+ .btn {
   background-color: var(--bg-color, var(--deep-saffron));
   color: var(--white);
   font-family: var(--ff-rubik);
@@ -127,37 +146,32 @@ th{
 
 .btn-hover:is(:hover, :focus)::after { --scale: 500; }
 
-.hero {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding-block: 145px 60px;
-  text-align: center;
-}
+
+
 .hero .btn { margin-inline: auto; }
 
 .hero .btn:is(:hover, :focus) {
   background-color: var(--white);
   color: var(--black);
 }
-</style>
+
+
+
+
+
+
+
+    </style>
+
 </head>
-<script>
-    function displayCompletedOrder() {
-        var corderElement = document.getElementById('corder');
-        corderElement.style.display = (corderElement.style.display === "block") ? "none" : "block";
-    }
-</script>
 
-<body>
+<body id="top" style=color: "white";>
 
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <a class="my-0 mr-md-auto font-weight-normal" href="/">
-            <h5>Razor-Sec</h5>
-        </a>
-       
+  <!-- 
+    - #HEADER
+  -->
 
-       <header class="header" data-header>
+  <header class="header" data-header>
     <div class="container">
 
       <h1>
@@ -227,7 +241,6 @@ th{
  <li class="nav-item">
           <div class="dropdown">
           <button class="btn btn-hover">My Reservations</button>
-        <!-- Dropdown content -->
         <div class="dropdown-content">
           
             <a href="/myreservation" class="navbar-link" data-nav-link>Pending</a>
@@ -238,10 +251,6 @@ th{
     </div>
     </li>
 
-
-
-
-
         <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
           <span class="line top"></span>
           <span class="line middle"></span>
@@ -251,15 +260,8 @@ th{
 
     </div>
   </header>
-
- 
-
-        {{#if loggedIn}}
-        <a class="btn btn-outline-primary my-2 my-md-0 mr-md-3" href="/logout">Logout</a>
-        {{else}}
-        <a class="btn btn-outline-primary my-2 my-md-0 mr-md-3" href="/login">Sign up</a>
-        <a class="btn btn-outline-primary" href="/register">Register</a>
-        {{/if}}
+ <main>
+    <article>
 
     </div>
 
