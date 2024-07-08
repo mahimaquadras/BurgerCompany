@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
         res.redirect('/dashboard')
     }
     else {
-        res.render('register');
+        res.render('login');
 
     }
 });
